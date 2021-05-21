@@ -50,14 +50,14 @@ class MusicPlayer:
     playbtn = Button(buttonframe,text="VOLUME -",command=self.volumedown,width=10,height=1,font=("courier",16,"bold"),fg="black",bg="#FF652F").grid(row=1,column=2,padx=35,pady=5)
 
     # Creating Playlist Frame
-    songsframe = LabelFrame(self.root,text="Song Playlist",font=("times new roman",15,"bold"),bg="grey",fg="white",bd=5,relief=GROOVE)
-    songsframe.place(x=600,y=0,width=400,height=200)
+    songsframe = LabelFrame(self.root,text=" Song Playlist ",font=("comic sans ms",15,"bold"),bg="#15DB95",fg="#2E1114",bd=8,relief=GROOVE)
+    songsframe.place(x=600,y=0,width=400,height=350)
     # Inserting scrollbar
     scrol_y = Scrollbar(songsframe,orient=VERTICAL)
     # Inserting Playlist listbox
-    self.playlist = Listbox(songsframe,yscrollcommand=scrol_y.set,selectbackground="gold",selectmode=SINGLE,font=("times new roman",12,"bold"),bg="silver",fg="navyblue",bd=5,relief=GROOVE)
+    self.playlist = Listbox(songsframe,yscrollcommand=scrol_y.set,selectbackground="gold",justify=LEFT,height=20,selectmode=SINGLE,font=("ubuntu",10,"italic"),bg="silver",fg="black",bd=8,relief=GROOVE)
     # Applying Scrollbar to listbox
-    scrol_y.pack(side=RIGHT,fill=Y)
+    scrol_y.pack(side=RIGHT,fill="both")
     scrol_y.config(command=self.playlist.yview)
     self.playlist.pack(fill=BOTH)
     # Changing Directory for fetching Songs
