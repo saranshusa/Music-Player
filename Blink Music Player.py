@@ -3,7 +3,6 @@ from tkinter import *
 import pygame
 import os
 
-global volVal
 volVal = 1.0
 
 # Defining MusicPlayer Class
@@ -42,7 +41,7 @@ class MusicPlayer:
     playbtn = Button(buttonframe,text="PLAY",command=self.playsong,width=6,height=1,font=("courier",16,"bold"),fg="black",bg="#16FFBD").grid(row=0,column=0,padx=35,pady=5)
     # Inserting Pause Button
     playbtn = Button(buttonframe,text="PAUSE",command=self.pausesong,width=10,height=1,font=("courier",16,"bold"),fg="black",bg="#FFB48F").grid(row=0,column=1,padx=35,pady=5)
-    # Inserting Unpause Button
+    # Inserting Resume Button
     playbtn = Button(buttonframe,text="RESUME",command=self.unpausesong,width=10,height=1,font=("courier",16,"bold"),fg="black",bg="#15DB95").grid(row=1,column=1,padx=35,pady=5)
     # Inserting Stop Button
     playbtn = Button(buttonframe,text="STOP",command=self.stopsong,width=6,height=1,font=("courier",16,"bold"),fg="black",bg="#FF652F").grid(row=1,column=0,padx=35,pady=5)
@@ -110,7 +109,7 @@ class MusicPlayer:
       else:
           self.status.set("Max Volume")
       
-  #Volumee Down function
+  #Volume Down function
   def volumedown(self):
       global volVal
       #Volume MIN 0.1
