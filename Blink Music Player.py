@@ -12,6 +12,8 @@ class MusicPlayer:
   # Defining Constructor
   def __init__(self,root):
     self.root = root
+    # Icon of the window
+    self.root.iconbitmap(r'favicon.ico')
     # Title of the window
     self.root.title("Music Player Project")
     # Window Geometry
@@ -61,7 +63,7 @@ class MusicPlayer:
     scrol_y.config(command=self.playlist.yview)
     self.playlist.pack(fill=BOTH)
     # Changing Directory for fetching Songs
-    os.chdir(r"C:\Users\Saransh\Documents\GitHub\Music-Player\Music")
+    os.chdir(r"Music")
     # Fetching Songs
     songtracks = os.listdir()
     # Inserting Songs into Playlist
@@ -97,8 +99,8 @@ class MusicPlayer:
     # Playing back Song
     pygame.mixer.music.unpause()
 
+  #Volume Up function
   def volumeup(self):
-      #Volume Up function
       global volVal
       #Volume MAX 1.0
       if volVal < 1.0:
@@ -108,8 +110,8 @@ class MusicPlayer:
       else:
           self.status.set("Max Volume")
       
+  #Volumee Down function
   def volumedown(self):
-      #Volumee Down function
       global volVal
       #Volume MIN 0.1
       if volVal > 0.1:
